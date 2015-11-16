@@ -1,0 +1,83 @@
+/* Внешний вид ссылок, и сслыок при наведении */
+a, a:hover, a:focus, a:active{
+    text-decoration: none;
+    color: grey;
+}
+
+/* Текст внутри блока выравниваеться по правую сторону */
+.textalignright{
+    text-align: right;
+}
+
+/* Убирает верхний отступ для заголовков */
+h1, h2, h3{
+    margin-top: 0px;
+}
+
+/* Устанавливает текст по центру */
+.centertext{
+text-align: center;
+}
+
+/* Задает отступ от верха страницы */
+.topmargin{
+    margin-top: 100px;
+}
+
+/* Распологает вложенный блок по центру относительно родительского блока */
+.centered{
+    margin: 0 auto;
+    float: none;
+}
+
+/* Шрифт и фон для всех страниц */
+body {
+	font-family: 'Segoe UI Light', Arial, sans-serif;
+    color: white;
+    background: black;
+    background-image: url(../../template/images/background.jpg);
+    background-attachment:fixed; 
+    background-position:center;
+    background-repeat: no-repeat; 
+}
+
+/* Пункты меню в верхнем регистре */
+.effect{
+    text-transform: uppercase;
+}
+
+/* Эффекты для анимации навигации */
+.effect::before,
+.effect::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.effect::before {
+	margin-right: 5px;
+	content: '[';
+	-webkit-transform: translateX(10px);
+	-moz-transform: translateX(10px);
+	transform: translateX(10px);
+}
+
+.effect::after {
+	margin-left: 5px;
+	content: ']';
+	-webkit-transform: translateX(-10px);
+	-moz-transform: translateX(-10px);
+	transform: translateX(-10px);
+}
+
+.effect:hover::before,
+.effect:hover::after,
+.effect:focus::before,
+.effect:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}

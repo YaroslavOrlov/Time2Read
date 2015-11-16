@@ -2,44 +2,50 @@
 
 class UserController
 {
-    public function actionRegister()
+    public function actionRegistration()
     {
         $login = '';
         $email = '';
         $password = '';
+        $repeatPassword = '';
         $result = false;
 
         if (isset($_POST['submit'])) {
             $login = $_POST['login'];
             $email = $_POST['email'];
-            $password = $_POST['password_text'];
+            $password = $_POST['password'];
+            $repeatPassword = $_POST['repeat_password'];
 
             $errors = false;
 
             if (!User::validLogin($login)) {
-                $errors[] = 'bad login';
+                $errors[1] = 'bad login';
             }
 
             if (!User::validPassword($password)) {
-                $errors[] = 'bad password';
+                $errors[2] = 'bad password';
             }
 
             if (!User::validEmail($email)) {
-                $errors[] = 'bad email';
+                $errors[0] = 'bad email';
+            }
+
+            if(!User::equalPassword($password, $repeatPassword)){
+                $errors[3] = 'not equal passwords';
             }
 
             if (User::existEmail($email)) {
-                $errors[] = 'this email already exist';
+                $errors[4] = 'this email already exist';
             }
 
             if ($errors == false) {
-                $result = User::register($login, $password, $email);
+                $result = User::registration($login, $password, $email);
 
                 header("Location: /user/login/");
             }
         }
 
-        require_once(ROOT . '/views/user/register.php');
+        require_once(ROOT . '/views/user/registration.php');
 
         return true;
     }
@@ -51,30 +57,37 @@ class UserController
 
         if (isset($_POST['submit'])) {
             $email = $_POST['email'];
-            $password = $_POST['password_text'];
+            $password = $_POST['password'];
 
             $errors = false;
 
             if (!User::validEmail($email)) {
-                $errors[] = 'wrong email';
+                $errors[0] = 'wrong email';
             }
 
             if (!User::validPassword($password)) {
-                $errors[] = 'wrong password';
+                $errors[1] = 'wrong password';
             }
 
-            $userId = User::validUser($email, $password);
+            if($errors == false){
+                $userId = User::validUser($email, $password);
 
-            if ($userId == false) {
-                $errors[] = 'wrong user';
-            } else {
-                User::auth($userId);
+                if ($userId == false) {
+                    $errors[2] = 'wrong user';
+                } else {
+                    User::auth($userId);
 
-                header("Location: /user/login/");
+                    header("Location: /home/home/");
+                }
             }
-
         }
         require_once(ROOT . '/views/user/login.php');
+
+        return true;
+    }
+
+    private function actionMailto($content){
+        mail('kidjimoshi96@gmail.com', 'Bug', $content);
 
         return true;
     }

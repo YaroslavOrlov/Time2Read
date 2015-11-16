@@ -1,0 +1,13 @@
+.jumbotron {
+    margin-top: 50px;
+}
+
+form {
+    padding: 10px;
+    color: gray;
+}
+
+p.error {
+    color: red;
+    font-size: 18px;
+}

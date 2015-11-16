@@ -1,0 +1,30 @@
+.nav a{
+    color: white;
+    font-size: large;
+}
+
+.nav a:hover, .nav a:active, .nav a:focus{
+    color: grey;
+}
+
+.navbar{
+    background: black;
+}
+
+textarea{
+    width: 100%;
+    font-size: large;
+    resize: none;
+}
+
+.navbar-brand{
+    color: white;
+    font-weight: 300;
+}
+
+.leftmargin{
+    margin-left: 11px;
+}
+.modal{
+    color: gray;
+}

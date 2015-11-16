@@ -3,7 +3,7 @@
 class User
 {
 
-    public static function register($login, $password, $email)
+    public static function registration($login, $password, $email)
     {
         $db = Db::getConnection();
         $query = "INSERT INTO Users (Login, Email, Password) VALUES ('$login', '$email','$password')";
@@ -37,6 +37,14 @@ class User
         return false;
     }
 
+    public static function equalPassword($password, $repeatPassword)
+    {
+        if($password == $repeatPassword){
+            return true;
+        }
+        return false;
+    }
+
     public static function validLogin($login)
     {
         if (preg_match('/^[a-zA-Z](.[a-zA-Z0-9_-]*)$/', $login)) {
@@ -60,16 +68,26 @@ class User
         return false;
     }
 
-    public static function auth($userId){
+    public static function auth($userId)
+    {
         $_SESSION['user'] = $userId;
     }
 
-    public static function validLogged(){
-        if(isset($_SESSION['user'])){
+    public static function validLogged()
+    {
+        if (isset($_SESSION['user'])) {
             return $_SESSION['user'];
         }
 
         header("Location: /user/login/");
+    }
+
+    public static function Logged()
+    {
+        if (isset($_SESSION['user'])) {
+            return true;
+        }
+        return false;
     }
 
 }

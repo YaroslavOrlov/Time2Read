@@ -82,6 +82,13 @@ class User
         header("Location: /user/login/");
     }
 
+    public static function returnUser()
+    {
+        if (isset($_SESSION['user'])) {
+            return $_SESSION['user'];
+        }
+    }
+
     public static function Logged()
     {
         if (isset($_SESSION['user'])) {

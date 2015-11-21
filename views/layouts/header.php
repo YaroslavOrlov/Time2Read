@@ -7,6 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Меню</title>
     <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../../template/css/JCarousel/jcarousel.data-attributes.css">
     <link href="../../template/css/bootstrap.css" rel="stylesheet">
     <link href="../../template/css/main.css" rel="stylesheet">
     <link href="../../template/css/author.css" rel="stylesheet">
@@ -16,6 +17,7 @@
     <link href="../../template/css/registration.css" rel="stylesheet">
     <link href="../../template/css/authorization.css" rel="stylesheet">
     <link href="../../template/css/font-awesome.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -42,7 +44,7 @@
                 <li><a href="/quote/quotes" class="effect">Цитаты</a></li>
                 <li><a href="#" class="effect">Поиск</a></li>
                 <li><a href="#" class="effect">Подборки</a></li>
-                <li><a href="#" class="effect">Мне повезет</a></li>
+                <li><a href="/book/book/<?php echo rand(1,Book::getCountBooks()); ?>" class="effect">Мне повезет</a></li>
                 <li><a href="#" class="effect">Обновления</a></li>
                 <li><a href="#" class="effect">Популярное</a></li>
                 <!-- Вызов модального окна -->

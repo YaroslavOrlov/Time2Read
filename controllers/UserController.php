@@ -30,7 +30,7 @@ class UserController
                 $errors[0] = 'bad email';
             }
 
-            if(!User::equalPassword($password, $repeatPassword)){
+            if (!User::equalPassword($password, $repeatPassword)) {
                 $errors[3] = 'not equal passwords';
             }
 
@@ -69,7 +69,7 @@ class UserController
                 $errors[1] = 'wrong password';
             }
 
-            if($errors == false){
+            if ($errors == false) {
                 $userId = User::validUser($email, $password);
 
                 if ($userId == false) {
@@ -86,8 +86,12 @@ class UserController
         return true;
     }
 
-    private function actionMailto($content){
-        mail('kidjimoshi96@gmail.com', 'Bug', $content);
+    public function actionUnset()
+    {
+        session_start();
+        unset($_SESSION['user']);
+
+        header('Location: /home/home');
 
         return true;
     }

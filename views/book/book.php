@@ -1,7 +1,11 @@
 <?php include(ROOT . '/views/layouts/header.php'); ?>
 
+<link href="../../template/css/book.css" rel="stylesheet">
+
+<?php include(ROOT . '/views/layouts/navigation.php'); ?>
+
 <!-- Страница книги -->
-<div class="container bookmargintop">
+<div class="container marginfromnavigation">
     <?php if (isset($book)): ?>
         <div class="row">
             <div class="col-md-12">
@@ -21,15 +25,20 @@
                             <div class="tab-pane fade in active" id="main">
                                 <div class="row">
                                     <div class="col-md-4 col-sm-6 littlemargin">
-                                        <img src="http://placehold.it/320x450" class="img-responsive"/>
+                                        <img src="../../template/images/books/<?php echo $data[7]; ?>" class="img-responsive"/>
                                         <br/>
                                         <?php if (isset($marks[0][1])): ?>
                                             <?php foreach ($marks as $mark): ?>
                                                 <span>Средняя оценка</span>
-                                                <span><?php echo round(($mark[1] / $mark[0]), 2); ?></span>
+                                                <span id="avg-mark"><?php echo round(($mark[1] / $mark[0]), 2); ?></span>
                                                 <span>Оценили</span>
-                                                <span><?php echo $mark[0]; ?></span>
+                                                <span id="mark"><?php echo $mark[0]; ?></span>
                                             <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <span>Средняя оценка</span>
+                                            <span>0</span>
+                                            <span>Оценили</span>
+                                            <span>0</span>
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-md-5 col-sm-6">
@@ -78,17 +87,29 @@
                                         <button class="btn btn-success btn-block
                                         <?php if (User::Logged()): ?>
                                             remove-user-books
-                                        <?php endif; ?>">По умолчанию</button>
+                                        <?php endif; ?>">По умолчанию
+                                        </button>
                                         <!-- Выставление оценки -->
                                         <br/>
                                         <br/>
 
-                                        <div class="centertext">
-                                            <span><i class="fa fa-star-o fa-2x"></i></span>
-                                            <span><i class="fa fa-star-o fa-2x"></i></span>
-                                            <span><i class="fa fa-star-o fa-2x"></i></span>
-                                            <span><i class="fa fa-star-o fa-2x"></i></span>
-                                            <span><i class="fa fa-star-o fa-2x"></i></span>
+                                        <div class="centertext markable">
+                                            <?php if (isset($bookmark)): ?>
+                                                <?php for ($i = 0; $i < $bookmark[2]; $i++): ?>
+                                                    <i class="fa fa-star fa-2x"
+                                                       data-mark="<?php echo $i + 1; ?>"></i>
+                                                <?php endfor; ?>
+                                                <?php for ($i = $bookmark[2]; $i < 5; $i++): ?>
+                                                    <i class="fa fa-star-o fa-2x"
+                                                       data-mark="<?php echo $i + 1; ?>"></i>
+                                                <?php endfor; ?>
+                                            <?php else: ?>
+                                                <i class="fa fa-star-o fa-2x" data-mark="1"></i>
+                                                <i class="fa fa-star-o fa-2x" data-mark="2"></i>
+                                                <i class="fa fa-star-o fa-2x" data-mark="3"></i>
+                                                <i class="fa fa-star-o fa-2x" data-mark="4"></i>
+                                                <i class="fa fa-star-o fa-2x" data-mark="5"></i>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>

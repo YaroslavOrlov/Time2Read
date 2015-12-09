@@ -11,9 +11,12 @@ return array(
     'book/Reading/([1-9]+)' => 'book/Reading/$1',
     'book/WantRead/([1-9]+)' => 'book/WantRead/$1',
     'book/RemoveUserBook/([1-9]+)' => 'book/RemoveUserBook/$1',
+    'book/marked/([0-9]+)/([1-5])'=>'book/marked/$1/$2',
     'quote/quotes' => 'quote/quotes',
     'quote/next' => 'quote/next',
-    'user/unset' => 'user/unset',
+    'quote/remove/([1-9]+)' => 'quote/remove/$1',
+    'user/logout' => 'user/logout',
+    'user/profile' => 'user/profile',
     'home' => 'home/home',
     '' => 'home/home'
 );

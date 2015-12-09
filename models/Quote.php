@@ -14,6 +14,18 @@ class Quote
 
         return mysqli_query($db, $query)->fetch_all();
     }
+
+    public static function removeQuote($quoteId, $userId)
+    {
+        $db = DB::getConnection();
+
+        $query = "DELETE FROM UserQuotes
+                  WHERE UserId = $userId
+                  AND QuoteId = $quoteId";
+
+        return mysqli_query($db, $query)->fetch_all();
+
+    }
 }
 
 ?>

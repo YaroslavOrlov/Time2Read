@@ -28,3 +28,8 @@ textarea{
 .modal{
     color: gray;
 }
+
+.bordericon i{
+    border: 3px solid grey;
+    padding: 3px;
+}

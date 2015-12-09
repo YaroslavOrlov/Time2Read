@@ -1,3 +1,10 @@
+.marginfromnavigation{
+	margin-top: 130px;
+}
+
+ul{
+    list-style-type: none;
+}
 /* Внешний вид ссылок, и сслыок при наведении */
 a, a:hover, a:focus, a:active{
     text-decoration: none;
@@ -35,7 +42,7 @@ body {
 	font-family: 'Segoe UI Light', Arial, sans-serif;
     color: white;
     background: black;
-    background-image: url(../../template/images/background.jpg);
+    background-image: url(../images/background.jpg);
     background-attachment:fixed; 
     background-position:center;
     background-repeat: no-repeat; 

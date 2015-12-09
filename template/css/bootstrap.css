@@ -4960,15 +4960,15 @@ a.label:focus {
 .badge {
   display: inline-block;
   min-width: 10px;
-  padding: 3px 7px;
-  font-size: 12px;
+  padding: 4px 7px;
+  font-size: 13px;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: gray;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  background-color: #777;
+  background-color: white;
   border-radius: 10px;
 }
 .badge:empty {
@@ -4981,7 +4981,7 @@ a.label:focus {
 .btn-xs .badge,
 .btn-group-xs > .btn .badge {
   top: 0;
-  padding: 1px 5px;
+  padding: 3px 5px;
 }
 a.badge:hover,
 a.badge:focus {
@@ -5046,7 +5046,7 @@ a.badge:focus {
 }
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 9px;
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;

@@ -7,7 +7,7 @@ class Book
         $db = Db::getConnection();
 
         $query = "SELECT a.FullName, b.BookId, b.AuthorId, b.Name,
-                         b.Description, b.StoreLink, b.AudioLink
+                         b.Description, b.StoreLink, b.AudioLink, b.Cover
                          FROM Books b
                          INNER JOIN Authors a
                          ON b.BookId = $id
@@ -61,6 +61,17 @@ class Book
 
         return mysqli_query($db, $query);
 
+    }
+
+    public static function getUserMark($bookId, $userId)
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT * FROM Marks
+                  WHERE BookId = $bookId
+                  AND UserId = $userId";
+
+        return mysqli_query($db, $query)->fetch_array();
     }
 
     public static function addToAlreadyRead($userId, $bookId)
@@ -125,6 +136,43 @@ class Book
         }
         return false;
     }
+
+    public static function addMarkToBook($bookId, $userId, $mark)
+    {
+        $db = Db::getConnection();
+
+        $query = "INSERT INTO Marks(BookId, UserId, Mark) VALUES ($bookId,$userId, $mark)";
+
+        return mysqli_query($db, $query);
+    }
+
+    public static function existBookMark($userId, $bookId)
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT * FROM Marks
+                  WHERE UserId = $userId
+                  AND BookId = $bookId";
+
+        $result = mysqli_query($db, $query)->fetch_row();
+
+        if (isset($result)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function updateMarkToBook($bookId, $userId, $mark)
+    {
+        $db = Db::getConnection();
+
+        $query = "UPDATE Marks SET Mark = $mark
+                  WHERE BookId = $bookId
+                  AND UserId = $userId";
+
+        return mysqli_query($db, $query);
+    }
+
 }
 
 ?>

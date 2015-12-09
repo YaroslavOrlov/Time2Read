@@ -1,7 +1,11 @@
 <?php include(ROOT . '/views/layouts/header.php'); ?>
 
+    <link href="../../template/css/registration.css" rel="stylesheet">
+
+<?php include(ROOT . '/views/layouts/navigation.php'); ?>
+
     <!-- Регистрации -->
-    <div class="container">
+    <div class="container marginfromnavigation">
         <div class="row">
             <div class="col-md-3">
             </div>
@@ -11,7 +15,7 @@
                     <form action="" method="post">
                         <h2 class="form-signin-heading">Пожалуйста введите данные</h2>
 
-                        <?php if (isset($errors[4])):?>
+                        <?php if (isset($errors[4])): ?>
                             <p class="error"><?php echo $errors[4]; ?></p>
                         <?php endif; ?>
 
@@ -25,7 +29,7 @@
                                        id="email" class="form-control"
                                        value="<?php echo $email ?>" required autofocus/>
                             </div>
-                            <?php if (isset($errors[0])):?>
+                            <?php if (isset($errors[0])): ?>
                                 <p class="error"><?php echo $errors[0]; ?></p>
                             <?php endif; ?>
                         </div>
@@ -39,7 +43,7 @@
                                        id="login" class="form-control"
                                        value="<?php echo $login ?>" required/>
                             </div>
-                            <?php if (isset($errors[1])):?>
+                            <?php if (isset($errors[1])): ?>
                                 <p class="error"><?php echo $errors[1]; ?></p>
                             <?php endif; ?>
                         </div>
@@ -53,7 +57,7 @@
                                        id="password" class="form-control"
                                        value="<?php echo $password ?>" required/>
                             </div>
-                            <?php if (isset($errors[2])):?>
+                            <?php if (isset($errors[2])): ?>
                                 <p class="error"><?php echo $errors[2]; ?></p>
                             <?php endif; ?>
                         </div>
@@ -67,7 +71,7 @@
                                        id="repeat_pass" class="form-control"
                                        value="<?php echo $repeatPassword ?>" required/>
                             </div>
-                            <?php if (isset($errors[3])):?>
+                            <?php if (isset($errors[3])): ?>
                                 <p class="error"><?php echo $errors[3]; ?></p>
                             <?php endif; ?>
                         </div>

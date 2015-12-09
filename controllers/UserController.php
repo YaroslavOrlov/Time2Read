@@ -19,23 +19,23 @@ class UserController
             $errors = false;
 
             if (!User::validLogin($login)) {
-                $errors[1] = 'bad login';
+                $errors[1] = 'Введите логин в формате не более 8 символов например exam2000';
             }
 
             if (!User::validPassword($password)) {
-                $errors[2] = 'bad password';
+                $errors[2] = 'Введите пароль в формате например PAss2000';
             }
 
             if (!User::validEmail($email)) {
-                $errors[0] = 'bad email';
+                $errors[0] = 'Введите e-mail в формате например example@mail.com';
             }
 
             if (!User::equalPassword($password, $repeatPassword)) {
-                $errors[3] = 'not equal passwords';
+                $errors[3] = 'Пароли не совпадают';
             }
 
             if (User::existEmail($email)) {
-                $errors[4] = 'this email already exist';
+                $errors[4] = 'Такой e-mail уже зарегистрирован';
             }
 
             if ($errors == false) {
@@ -62,18 +62,18 @@ class UserController
             $errors = false;
 
             if (!User::validEmail($email)) {
-                $errors[0] = 'wrong email';
+                $errors[0] = 'Не верно введен e-mail';
             }
 
             if (!User::validPassword($password)) {
-                $errors[1] = 'wrong password';
+                $errors[1] = 'Не верно указан пароль';
             }
 
             if ($errors == false) {
                 $userId = User::validUser($email, $password);
 
                 if ($userId == false) {
-                    $errors[2] = 'wrong user';
+                    $errors[2] = 'Такой пользователь не существует';
                 } else {
                     User::auth($userId);
 
@@ -86,12 +86,36 @@ class UserController
         return true;
     }
 
-    public function actionUnset()
+    public function actionProfile()
     {
-        session_start();
-        unset($_SESSION['user']);
+        $user_id = User::validLogged();
 
-        header('Location: /home/home');
+        $reviews = User::getUserBookReview($user_id);
+
+        $quotes = User::getUserQuotes($user_id);
+
+        $countReview = User::countReviews($user_id);
+
+        $countRead = User::getAlreadyRead($user_id);
+
+        $reading = User::getUserLikeBook($user_id,2);
+
+        $wantread = User::getUserLikeBook($user_id,1);
+
+        $alreadyread = User::getUserLikeBook($user_id,3);
+
+        $login = User::getUserLogin($user_id);
+
+        //var_dump($reviews);
+
+        require_once(ROOT . '/views/user/profile.php');
+
+        return true;
+    }
+
+    public function actionLogout()
+    {
+        User::logOut();
 
         return true;
     }

@@ -1,7 +1,11 @@
 <?php include(ROOT . '/views/layouts/header.php'); ?>
 
+    <link href="../../template/css/authorization.css" rel="stylesheet">
+
+<?php include(ROOT . '/views/layouts/navigation.php'); ?>
+
     <!-- Авторизация -->
-    <div class="container">
+    <div class="container marginfromnavigation">
         <div class="row">
             <div class="col-md-3 col-sm-2 col-xs-1">
             </div>

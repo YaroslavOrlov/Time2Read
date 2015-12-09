@@ -9,6 +9,10 @@ class BookController
 
         $marks = Book::getMarksBookById($id);
 
+        if (User::Logged()) {
+            $bookmark = Book::getUserMark($id, User::returnUser());
+        }
+
         require_once(ROOT . '/views/book/book.php');
 
         return true;
@@ -78,6 +82,7 @@ class BookController
 
     public function actionRemoveUserBook($bookId)
     {
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $userId = User::validLogged();
 
@@ -87,6 +92,36 @@ class BookController
         header('Location: /book/book/1');
 
         return true;
+    }
+
+    public function actionMarked($bookId, $mark)
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $userId = User::validLogged();
+
+            if (Book::existBookMark($userId, $bookId)) {
+                Book::updateMarkToBook($bookId, $userId, $mark);
+            } else {
+                Book::addMarkToBook($bookId, $userId, $mark);
+            }
+
+            $result = json_encode(Book::getMarksBookById($bookId), JSON_HEX_TAG |
+                JSON_HEX_APOS |
+                JSON_HEX_QUOT |
+                JSON_HEX_AMP |
+                JSON_UNESCAPED_UNICODE);
+
+            echo $result;
+
+            return true;
+        }
+
+        header('Location: /book/book/1');
+
+        return true;
+
     }
 }
 

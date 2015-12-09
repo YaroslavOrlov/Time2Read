@@ -1,0 +1,35 @@
+.avatar{
+    border-radius: 100px; /* Радиус скругления */
+    box-shadow: 0 0 0 1px grey, 0 0 13px #333; /* Параметры теней */
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+   }
+
+.paddinginfotop{
+    padding-top: 20px;
+}
+
+.margininfotop{
+    margin-top: 20px;
+}
+
+.margininfobottom{
+    margin-bottom: 20px;
+}
+
+.paddingbutton{
+    padding-top: 25px;
+}
+
+.buttonmargin{
+    margin-bottom: 5px;
+}
+
+.buttonwidth{
+    width: 115px;
+}
+
+.buttonheigth{
+    height:  34px;
+}

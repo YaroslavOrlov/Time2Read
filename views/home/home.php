@@ -1,7 +1,11 @@
 <?php include(ROOT . '/views/layouts/header.php'); ?>
 
+<link href="../../template/css/home.css" rel="stylesheet">
+
+<?php include(ROOT . '/views/layouts/navigation.php'); ?>
+
 <!-- Слайдер -->
-<div class="container margintop marginbottom">
+<div class="container marginbottom marginfromnavigation">
     <div class="carousel slide" id="carousel" data-interval="4000">
         <!-- Индикаторы -->
         <ol class="carousel-indicators">

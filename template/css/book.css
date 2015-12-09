@@ -1,6 +1,12 @@
 .littlemargin{
     margin-bottom: 20px;
 }
-.bookmargintop{
-    margin-top: 80px;
+
+textarea{
+    width: 100%;
+    font-size: large;
+    resize: none;
+}
+.quotetopmargin{
+    margin-top: 350px;
 }

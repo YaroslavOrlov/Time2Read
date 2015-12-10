@@ -98,11 +98,11 @@ class UserController
 
         $countRead = User::getAlreadyRead($user_id);
 
+        $alreadyread = User::getUserLikeBook($user_id,1);
+
         $reading = User::getUserLikeBook($user_id,2);
 
-        $wantread = User::getUserLikeBook($user_id,1);
-
-        $alreadyread = User::getUserLikeBook($user_id,3);
+        $wantread = User::getUserLikeBook($user_id,3);
 
         $login = User::getUserLogin($user_id);
 

@@ -173,6 +173,49 @@ class Book
         return mysqli_query($db, $query);
     }
 
+    public static function getSearchBooks($searchresult, $tagresult,
+                                          $genre, $bookorauthor, $userId)
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT a1.FullName, b1.BookId, b1.AuthorId, b1.Name, b1.Cover,
+                      COUNT(m1.BookId), SUM(m1.Mark), $userId
+                      FROM Books b1, Authors a1, Marks m1
+                      WHERE a1.AuthorId = b1.AuthorId
+                      AND b1.BookId = m1.BookId
+                      AND b1.Name LIKE "."'%"."$searchresult"."%'"."
+                      GROUP BY m1.BookId
+                      UNION ALL
+                      SELECT a2.FullName, b2.BookId, b2.AuthorId, b2.Name, b2.Cover,
+                      0, 0, $userId
+                      FROM Books b2, Authors a2
+                      WHERE b2.BookId NOT IN
+                      (SELECT BookId FROM Marks)
+                      AND b2.Name LIKE "."'%"."$searchresult"."%'"."
+                      GROUP BY b2.BookId";
+
+        if ($bookorauthor == 'author') {
+            $query = "SELECT a1.FullName, b1.BookId, b1.AuthorId, b1.Name, b1.Cover,
+                      COUNT(m1.BookId), SUM(m1.Mark), $userId
+                      FROM Books b1, Authors a1, Marks m1
+                      WHERE a1.AuthorId = b1.AuthorId
+                      AND b1.BookId = m1.BookId
+                      AND a1.FullName LIKE "."'%"."$searchresult"."%'"."
+                      GROUP BY m1.BookId
+                      UNION ALL
+                      SELECT a2.FullName, b2.BookId, b2.AuthorId, b2.Name, b2.Cover,
+                      0, 0, $userId
+                      FROM Books b2, Authors a2
+                      WHERE b2.BookId NOT IN
+                      (SELECT BookId FROM Marks)
+                      AND a2.FullName LIKE "."'%"."$searchresult"."%'"."
+                      GROUP BY b2.BookId";
+        }
+
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
+
 }
 
 ?>

@@ -192,8 +192,8 @@
                                             <h5><?php echo $quote[2]; ?></h5>
                                         </div>
                                         <div
-                                             class="col-md-1 col-xs-1 margininfotop textalignright">
-                                            <a data-quote="<?php echo $quote[0];?>" href="#" class="fa fa-close"></a>
+                                            class="col-md-1 col-xs-1 margininfotop textalignright">
+                                            <a data-quote="<?php echo $quote[0]; ?>" href="#" class="fa fa-close"></a>
                                         </div>
                                     </div>
                                 </li>
@@ -225,7 +225,8 @@
                             <?php foreach ($reading as $book): ?>
                                 <div class="item">
                                     <div class="thumbnail">
-                                        <img alt="Обложка книги" src="../../template/images/books/<?php echo $book[4]; ?>"
+                                        <img alt="Обложка книги"
+                                             src="../../template/images/books/<?php echo $book[4]; ?>"
                                              class="img-responsive"/>
 
                                         <div class="caption">
@@ -248,7 +249,8 @@
                             <?php foreach ($alreadyread as $book): ?>
                                 <div class="item">
                                     <div class="thumbnail">
-                                        <img alt="Обложка книги" src="../../template/images/books/<?php echo $book[4]; ?>"
+                                        <img alt="Обложка книги"
+                                             src="../../template/images/books/<?php echo $book[4]; ?>"
                                              class="img-responsive"/>
 
                                         <div class="caption">
@@ -271,7 +273,8 @@
                             <?php foreach ($wantread as $book): ?>
                                 <div class="item">
                                     <div class="thumbnail">
-                                        <img alt="Обложка книги" src="../../template/images/books/<?php echo $book[4]; ?>"
+                                        <img alt="Обложка книги"
+                                             src="../../template/images/books/<?php echo $book[4]; ?>"
                                              class="img-responsive"/>
 
                                         <div class="caption">

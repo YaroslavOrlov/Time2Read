@@ -7,6 +7,7 @@ return array(
     'support' => 'support/contact',
     'author/author/([1-9]+)' => 'author/author/$1',
     'book/book/([1-9]+)' => 'book/book/$1',
+    'book/search' => 'book/search',
     'book/AlreadyRead/([1-9]+)' => 'book/AlreadyRead/$1',
     'book/Reading/([1-9]+)' => 'book/Reading/$1',
     'book/WantRead/([1-9]+)' => 'book/WantRead/$1',

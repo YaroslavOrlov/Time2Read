@@ -25,12 +25,14 @@
                             <div class="tab-pane fade in active" id="main">
                                 <div class="row">
                                     <div class="col-md-4 col-sm-6 littlemargin">
-                                        <img src="../../template/images/books/<?php echo $data[7]; ?>" class="img-responsive"/>
+                                        <img src="../../template/images/books/<?php echo $data[7]; ?>"
+                                             class="img-responsive"/>
                                         <br/>
                                         <?php if (isset($marks[0][1])): ?>
                                             <?php foreach ($marks as $mark): ?>
                                                 <span>Средняя оценка</span>
-                                                <span id="avg-mark"><?php echo round(($mark[1] / $mark[0]), 2); ?></span>
+                                                <span
+                                                    id="avg-mark"><?php echo round(($mark[1] / $mark[0]), 2); ?></span>
                                                 <span>Оценили</span>
                                                 <span id="mark"><?php echo $mark[0]; ?></span>
                                             <?php endforeach; ?>

@@ -22,7 +22,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/home/home" class="effect">Домашняя</a></li>
                 <li><a href="/quote/quotes" class="effect">Цитаты</a></li>
-                <li><a href="#" class="effect">Поиск</a></li>
+                <li><a href="/book/search" class="effect">Поиск</a></li>
                 <li><a href="#" class="effect">Подборки</a></li>
                 <li><a href="/book/book/<?php echo rand(1,Book::getCountBooks()); ?>" class="effect">Мне повезет</a></li>
                 <li><a href="#" class="effect">Обновления</a></li>

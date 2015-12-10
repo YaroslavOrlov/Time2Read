@@ -25,32 +25,28 @@
       <file leaf-file-name="quotes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/quote/quotes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.882353">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state vertical-scroll-proportion="-5.382353">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuoteController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/QuoteController.php">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.147059">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding>
-                <element signature="n#actionNext#0;n#QuoteController#0;n#!!top" expanded="false" />
-                <element signature="n#actionLike#0;n#QuoteController#0;n#!!top" expanded="false" />
-                <element signature="n#actionRemove#0;n#QuoteController#0;n#!!top" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_params.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/db_params.php">
+      <file leaf-file-name="navigation.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/template/css/navigation.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11655012">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.4394619">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -93,10 +89,8 @@
         <option value="$PROJECT_DIR$/template/css/JCarousel/owl.carousel.css" />
         <option value="$PROJECT_DIR$/template/js/JCarousel/owl.carousel.js" />
         <option value="$PROJECT_DIR$/controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/template/css/navigation.css" />
         <option value="$PROJECT_DIR$/template/css/author.css" />
         <option value="$PROJECT_DIR$/views/layouts/header.php" />
-        <option value="$PROJECT_DIR$/template/css/main.css" />
         <option value="$PROJECT_DIR$/template/css/home.css" />
         <option value="$PROJECT_DIR$/views/home/home.php" />
         <option value="$PROJECT_DIR$/views/user/login.php" />
@@ -107,12 +101,10 @@
         <option value="$PROJECT_DIR$/template/js/deleteAjaxQuote.js" />
         <option value="$PROJECT_DIR$/template/js/addToUserBooks.js" />
         <option value="$PROJECT_DIR$/views/author/author.php" />
-        <option value="$PROJECT_DIR$/views/layouts/navigation.php" />
         <option value="$PROJECT_DIR$/views/book/book.php" />
         <option value="$PROJECT_DIR$/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/views/user/profile.php" />
         <option value="$PROJECT_DIR$/template/js/addToUserBookFromSearch.js" />
-        <option value="$PROJECT_DIR$/views/book/search.php" />
         <option value="$PROJECT_DIR$/controllers/BookController.php" />
         <option value="$PROJECT_DIR$/models/Book.php" />
         <option value="$PROJECT_DIR$/views/quote/quotes.php" />
@@ -120,6 +112,10 @@
         <option value="$PROJECT_DIR$/models/Quote.php" />
         <option value="$PROJECT_DIR$/controllers/QuoteController.php" />
         <option value="$PROJECT_DIR$/config/db_params.php" />
+        <option value="$PROJECT_DIR$/views/book/search.php" />
+        <option value="$PROJECT_DIR$/template/css/main.css" />
+        <option value="$PROJECT_DIR$/views/layouts/navigation.php" />
+        <option value="$PROJECT_DIR$/template/css/navigation.css" />
       </list>
     </option>
   </component>
@@ -180,6 +176,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,7 +237,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,7 +255,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="book" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -268,13 +273,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="time2read" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="time2read" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,11 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/images/background.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/css/registration.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30829597">
@@ -527,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.088235">
-          <caret line="11" column="3" selection-start-line="10" selection-start-column="67" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/user/registration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.147059">
@@ -597,20 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/navigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.647058">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/user/profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.71911424">
@@ -657,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,37 +690,7 @@
             <element signature="n#addMarkToBook#0;n#Book#0;n#!!top" expanded="false" />
             <element signature="n#existBookMark#0;n#Book#0;n#!!top" expanded="false" />
             <element signature="n#updateMarkToBook#0;n#Book#0;n#!!top" expanded="false" />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a.Ful..Books..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Marks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Books..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..UserBooks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="UPDATE UserB..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Marks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..UserBooks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Marks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="UPDATE Marks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..Books..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a2.Fu..Books..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..Books..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT a2.Fu..Books..." />
-            <marker date="1449743830921" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/book/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,13 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8251748">
           <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
-          <folding>
-            <element signature="n#actionBook#0;n#BookController#0;n#!!top" expanded="false" />
-            <element signature="n#actionAlreadyRead#0;n#BookController#0;n#!!top" expanded="false" />
-            <element signature="n#actionReading#0;n#BookController#0;n#!!top" expanded="false" />
-            <element signature="n#actionWantRead#0;n#BookController#0;n#!!top" expanded="false" />
-            <element signature="n#actionRemoveUserBook#0;n#BookController#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -748,10 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23310024">
           <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="n#actionQuotes#0;n#QuoteController#0;n#!!top" expanded="false" />
-            <element signature="n#actionNext#0;n#QuoteController#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5244755">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,15 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.495338">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/quote/quotes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.882353">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,10 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26223776">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <element signature="n#addQuote#0;n#Quote#0;n#!!top" expanded="false" />
-            <element signature="n#removeQuote#0;n#Quote#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,21 +733,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.352941">
           <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding>
-            <element signature="n#removeQuote#0;n#Quote#0;n#!!top" expanded="false" />
-            <element signature="n#addQuote#0;n#Quote#0;n#!!top" expanded="false" />
-            <marker date="1449747014144" expanded="true" signature="-1:-1" placeholder="SELECT ${$us..Quotes..." />
-            <marker date="1449747014144" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1449747014144" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..UserQuotes..." />
-            <marker date="1449747014144" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32051283">
+          <caret line="11" column="3" selection-start-line="10" selection-start-column="67" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/QuoteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.147059">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.823529">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="n#actionNext#0;n#QuoteController#0;n#!!top" expanded="false" />
             <element signature="n#actionLike#0;n#QuoteController#0;n#!!top" expanded="false" />
@@ -819,8 +766,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/db_params.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.147059">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/navigation.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11655012">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="28" />
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/book/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14568764">
+          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/quote/quotes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.382353">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/css/navigation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4394619">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding />
         </state>
       </provider>

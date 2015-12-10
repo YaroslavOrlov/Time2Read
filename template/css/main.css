@@ -42,10 +42,11 @@ body {
 	font-family: 'Segoe UI Light', Arial, sans-serif;
     color: white;
     background: black;
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/background.jpeg);
     background-attachment:fixed; 
     background-position:center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* Пункты меню в верхнем регистре */

@@ -88,7 +88,7 @@
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-3" data-book-id="<?php echo $book[1]; ?>">
+                <div class="col-md-2 col-sm-3 col-xs-12" data-book-id="<?php echo $book[1]; ?>">
                     <button name="this" class="btn btn-success btn-block
                         <?php if (User::Logged()): ?>
                             already-read

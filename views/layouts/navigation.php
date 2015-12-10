@@ -15,7 +15,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
                 <i class="fa fa-bars fa-2x"></i>
             </button>
-            <a class="navbar-brand hidden-sm" href="#" id="brand">Time| |Read</a>
+            <a class="navbar-brand" href="#" id="brand">Time| |Read</a>
         </div>
         <!-- Пункты меню -->
         <div class="collapse navbar-collapse" id="responsive-menu">
@@ -25,7 +25,6 @@
                 <li><a href="/book/search" class="effect">Поиск</a></li>
                 <li><a href="#" class="effect">Подборки</a></li>
                 <li><a href="/book/book/<?php echo rand(1,Book::getCountBooks()); ?>" class="effect">Мне повезет</a></li>
-                <li><a href="#" class="effect">Обновления</a></li>
                 <li><a href="#" class="effect">Популярное</a></li>
                 <!-- Вызов модального окна -->
                 <li><a href="#support" data-toggle="modal" class="effect">Поддержка</a></li>

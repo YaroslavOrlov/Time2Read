@@ -4,7 +4,7 @@ class QuoteController
 {
     public static function actionQuotes()
     {
-        $result = Quote::getRandomQuote(50);
+        $result = Quote::getRandomQuote(10);
 
         require_once(ROOT . '/views/quote/quotes.php');
 
@@ -24,6 +24,25 @@ class QuoteController
 
             return true;
 
+        }
+
+        header('Location: /quote/quotes');
+
+        return true;
+    }
+
+    public static function actionLike($quote_id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $user_id = User::validLogged();
+            if (Quote::existUserQuote($quote_id, $user_id)) {
+                Quote::removeQuote($quote_id,$user_id);
+            } else {
+                Quote::addQuote($quote_id,$user_id);
+            }
+
+            return true;
         }
 
         header('Location: /quote/quotes');

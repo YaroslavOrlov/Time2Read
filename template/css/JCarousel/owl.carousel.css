@@ -4,10 +4,10 @@
  */
 
 #left, #right {
-    border: 1px solid black;
-    display: block; 
+    display: block;
     width: 50px;
     float:left;
+	z-index:100;
 }
 
 @media (min-width: 1275px) and (max-width: 1920px) {

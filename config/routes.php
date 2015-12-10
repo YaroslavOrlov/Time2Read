@@ -16,6 +16,7 @@ return array(
     'quote/quotes' => 'quote/quotes',
     'quote/next' => 'quote/next',
     'quote/remove/([1-9]+)' => 'quote/remove/$1',
+    'quote/like/([1-9]+)' => 'quote/like/$1',
     'user/logout' => 'user/logout',
     'user/profile' => 'user/profile',
     'home' => 'home/home',

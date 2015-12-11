@@ -180,7 +180,7 @@ class User
         $query = "SELECT COUNT(UserId)
                   FROM UserBooks
                   WHERE UserId = $userId
-                  AND Category = 3";
+                  AND Category = 1";
 
         return mysqli_query($db, $query)->fetch_array();
     }

@@ -10,7 +10,7 @@
         <!-- Меню для больших экранов -->
         <div class="container hidden-sm hidden-xs visible-md visible-lg">
             <div class="row">
-                <div class="col-md-2 col-lg-2"><img alt="Ваш аватар" src="../../template/images/avatar.jpg"
+                <div class="col-md-2 col-lg-2"><img alt="Ваш аватар" src="../../template/images/<?php echo $login[2]; ?>"
                                                     class="avatar"/>
                 </div>
                 <div class="col-md-10 col-lg-10 margininfotop">
@@ -33,7 +33,7 @@
                             </h4>
                         </div>
                         <div class="col-md-3 col-lg-4">
-                            <button class="btn btn-success buttonmargin">Редактировать</button>
+                            <a href="/user/edit" class="btn btn-success buttonmargin">Редактировать</a>
                             <a href="/user/logout" class="btn btn-success buttonmargin buttonwidth">Выйти</a>
                         </div>
                         <div class="col-md-12 col-lg-12">
@@ -68,17 +68,18 @@
                                     <?php if (isset($countRead)): ?>
                                         <?php echo $countRead[0]; ?>
                                     <? endif; ?>
-                                    |</span> <span>Уровень Джедай |</span>
+                                    |</span>
+                                <span>Уровень Джедай |</span>
                                 <span> Написал рецензий
                                     <?php if (isset($countReview)): ?>
                                         <?php echo $countReview[0]; ?>
-                                    <? endif; ?>
-                                </span>
+                                    <? endif; ?></span>
                             </h4>
                         </div>
                         <div class="col-sm-12 paddingbutton textalignright">
-                            <button class="btn btn-success buttonmargin">Редактировать</button>
-                            <button class="btn btn-success buttonmargin buttonwidth buttonheigth">Выйти</button>
+                            <a href="/user/edit"  class="btn btn-success buttonmargin">Редактировать</a>
+                            <a href="/user/logout"
+                               class="btn btn-success buttonmargin buttonwidth buttonheigth">Выйти</a>
                         </div>
                     </div>
                 </div>
@@ -108,8 +109,8 @@
                         <? endif; ?>
                     </h4></div>
                 <div class="col-xs-12">
-                    <button class="btn btn-success buttonmargin">Редактировать</button>
-                    <button class="btn btn-success buttonmargin buttonwidth buttonheigth">Выйти</button>
+                    <a href="/user/edit"  class="btn btn-success buttonmargin">Редактировать</a>
+                    <a href="/user/logout" class="btn btn-success buttonmargin buttonwidth buttonheigth">Выйти</a>
                 </div>
             </div>
         </div>

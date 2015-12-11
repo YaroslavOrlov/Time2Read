@@ -1,12 +1,29 @@
-.littlemargin{
+.littlemargin {
     margin-bottom: 20px;
 }
 
-textarea{
+textarea {
     width: 100%;
     font-size: large;
     resize: none;
 }
-.quotetopmargin{
+
+.quotetopmargin {
     margin-top: 350px;
+}
+
+.backgorundclass {
+    background-color: grey;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-bottom: 15px;
+}
+
+.reviewnote {
+    color: white;
+    text-align: center;
+}
+
+.marginformtop{
+    margin-top: 5px;
 }

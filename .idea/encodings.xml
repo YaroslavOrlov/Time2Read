@@ -7,10 +7,13 @@
     <file url="file://$PROJECT_DIR$/views/author/author.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/book/book.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/book/search.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/home/collection.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/home/home.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/home/popular.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/header.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/layouts/navigation.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/quote/quotes.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/user/edit.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/user/login.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/user/profile.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/user/registration.php" charset="UTF-8" />

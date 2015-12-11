@@ -1,0 +1,18 @@
+.jumbotron{
+    margin-top: 50px;
+}
+form{
+    padding: 10px;
+    color: gray;
+}
+
+.avatar{
+    border-radius: 100px; /* Радиус скругления */
+    box-shadow: 0 0 0 1px grey, 0 0 13px #333; /* Параметры теней */
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+   }
+input[type="file"]{
+    background-color: #eee;
+}

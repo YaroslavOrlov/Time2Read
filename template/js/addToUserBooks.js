@@ -67,7 +67,7 @@
                     }
                     elem.className = "fa fa-star fa-2x";
                     data = JSON.parse(data);
-                    $('#avg-mark').text(data[0][1] / data[0][0]);
+                    $('#avg-mark').text((Math.round((data[0][1] / data[0][0]) * 100)) / 100);
                     $('#mark').text(data[0][0]);
                 }
             });

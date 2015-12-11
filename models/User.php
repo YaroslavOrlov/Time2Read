@@ -13,6 +13,16 @@ class User
         return $result;
     }
 
+    public static function updateUser($userId, $login, $email, $password, $avatar)
+    {
+        $db = Db::getConnection();
+        $query = "UPDATE Users SET Login='$login',Email='$email',Password='$password',Avatar='$avatar'
+                  WHERE UserId = $userId";
+
+        return mysqli_query($db, $query);
+
+    }
+
     public static function validEmail($email)
     {
         if (preg_match('/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/', $email)) {
@@ -179,7 +189,7 @@ class User
     {
         $db = DB::getConnection();
 
-        $query = "SELECT Login
+        $query = "SELECT Login, UserId, Avatar, Email
                   FROM Users
                   WHERE UserId = $userId";
 

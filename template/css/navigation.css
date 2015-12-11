@@ -1,4 +1,4 @@
-.nav a{
+.navletter a{
     color: white;
     font-size: large;
 }
@@ -24,6 +24,10 @@ textarea{
 .navbar-brand{
     color: white;
     font-weight: 300;
+    padding: 0;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-right: 5px;
 }
 
 .leftmargin{
@@ -34,6 +38,6 @@ textarea{
 }
 
 .bordericon i{
-    border: 3px solid grey;
-    padding: 3px;
+    margin-right: 5px;
+    margin-left: 5px;
 }

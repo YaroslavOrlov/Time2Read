@@ -1,0 +1,11 @@
+.carousel-indicators{
+    bottom: -50px !important;
+}
+
+.carousel-control{
+    width: 5%;
+}
+
+.headmargin{
+    margin-bottom: 50px;
+}

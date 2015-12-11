@@ -34,6 +34,21 @@ class Author
 
         return mysqli_query($db, $query)->fetch_row();
     }
+
+    public static function getPopularAuthor()
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT a.AuthorId, a.FullName, a.Cover, Count(m.Mark)
+                  FROM Books b, Marks m, Authors a
+                  WHERE b.BookId = m.BookId
+                  AND b.AuthorId = a.AuthorId
+                  GROUP BY a.AuthorId
+				  ORDER BY Count(m.Mark) DESC
+				  LIMIT 0,6";
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
 }
 
 ?>

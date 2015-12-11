@@ -15,17 +15,17 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
                 <i class="fa fa-bars fa-2x"></i>
             </button>
-            <a class="navbar-brand" href="#" id="brand">Time| |Read</a>
+            <a class="navbar-brand" href="#" id="brand"><img src="../../template/images/brand.png"></a>
         </div>
         <!-- Пункты меню -->
         <div class="collapse navbar-collapse" id="responsive-menu">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navletter">
                 <li><a href="/home/home" class="effect">Домашняя</a></li>
                 <li><a href="/quote/quotes" class="effect">Цитаты</a></li>
                 <li><a href="/book/search" class="effect">Поиск</a></li>
-                <li><a href="#" class="effect">Подборки</a></li>
+                <li><a href="/home/collection" class="effect">Подборки</a></li>
                 <li><a href="/book/book/<?php echo rand(1,Book::getCountBooks()); ?>" class="effect">Мне повезет</a></li>
-                <li><a href="#" class="effect">Популярное</a></li>
+                <li><a href="/home/popular" class="effect">Популярное</a></li>
                 <!-- Вызов модального окна -->
                 <li><a href="#support" data-toggle="modal" class="effect">Поддержка</a></li>
                 <li class="leftmargin"><a href="/user/profile"><i class="fa fa-bookmark-o fa-2x"></i></a></li>
@@ -51,7 +51,7 @@
                 </form>
             </div>
             <!-- Ссылки на социальные медиа -->
-            <div class="modal-footer centertext">
+            <div class="modal-footer centertext bordericon">
                 <span><a href="#" target="_blank">
                         <i class="fa fa-facebook-official fa-2x"></i></a></span>
                 <span><a href="http://twitter.com/Time_2_Read" target="_blank">

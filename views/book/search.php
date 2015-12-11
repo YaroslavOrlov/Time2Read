@@ -2,6 +2,8 @@
 
 <link href="../../template/css/search.css" rel="stylesheet">
 
+
+
 <?php include(ROOT . '/views/layouts/navigation.php'); ?>
 
 
@@ -66,6 +68,27 @@
                             <span data-allmark="<?php echo $book[1] ?>">0</span></h4>
                     <?php endif; ?>
 
+<!--                    <div class="rating textelementmargin markable" data-idbook="--><?php //echo $book[1] ?><!--">-->
+<!--                        --><?php //$bookmark = Book::getUserMark($book[1], $book[7]); ?>
+<!--                        --><?php //if (isset($bookmark)): ?>
+<!--                            --><?php //for ($i = 0; $i < $bookmark[2]; $i++): ?>
+<!--                                <span><i class="fa fa-star-o fa-2x"-->
+<!--                                         data-mark="--><?php //echo $i + 1; ?><!--"-->
+<!--                                         data-id-book="--><?php //echo $book[1]; ?><!--"></i></span>-->
+<!--                            --><?php //endfor; ?>
+<!--                            --><?php //for ($i = $bookmark[2]; $i < 5; $i++): ?>
+<!--                                <span><i class="fa fa-star fa-2x"-->
+<!--                                         data-mark="--><?php //echo $i + 1; ?><!--"-->
+<!--                                         data-id-book="--><?php //echo $book[1]; ?><!--"></i></span>-->
+<!--                            --><?php //endfor; ?>
+<!--                        --><?php //else: ?>
+<!--                            <span><i class="fa fa-star fa-2x" data-id-book="--><?php //echo $book[1]; ?><!--" data-mark="1"></i></span>-->
+<!--                            <span><i class="fa fa-star fa-2x" data-id-book="--><?php //echo $book[1]; ?><!--" data-mark="2"></i></span>-->
+<!--                            <span><i class="fa fa-star fa-2x" data-id-book="--><?php //echo $book[1]; ?><!--" data-mark="3"></i></span>-->
+<!--                            <span><i class="fa fa-star fa-2x" data-id-book="--><?php //echo $book[1]; ?><!--" data-mark="4"></i></span>-->
+<!--                            <span><i class="fa fa-star fa-2x" data-id-book="--><?php //echo $book[1]; ?><!--" data-mark="5"></i></span>-->
+<!--                        --><?php //endif; ?>
+<!--                    </div>-->
                     <div class="textelementmargin markable" data-idbook="<?php echo $book[1] ?>">
                         <?php $bookmark = Book::getUserMark($book[1], $book[7]); ?>
                         <?php if (isset($bookmark)): ?>

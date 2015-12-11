@@ -183,7 +183,7 @@ class Book
                       FROM Books b1, Authors a1, Marks m1
                       WHERE a1.AuthorId = b1.AuthorId
                       AND b1.BookId = m1.BookId
-                      AND b1.Name LIKE "."'%"."$searchresult"."%'"."
+                      AND b1.Name LIKE " . "'%" . "$searchresult" . "%'" . "
                       GROUP BY m1.BookId
                       UNION ALL
                       SELECT a2.FullName, b2.BookId, b2.AuthorId, b2.Name, b2.Cover,
@@ -191,7 +191,8 @@ class Book
                       FROM Books b2, Authors a2
                       WHERE b2.BookId NOT IN
                       (SELECT BookId FROM Marks)
-                      AND b2.Name LIKE "."'%"."$searchresult"."%'"."
+                      AND a2.AuthorId = b2.AuthorId
+                      AND b2.Name LIKE " . "'%" . "$searchresult" . "%'" . "
                       GROUP BY b2.BookId";
 
         if ($bookorauthor == 'author') {
@@ -200,7 +201,7 @@ class Book
                       FROM Books b1, Authors a1, Marks m1
                       WHERE a1.AuthorId = b1.AuthorId
                       AND b1.BookId = m1.BookId
-                      AND a1.FullName LIKE "."'%"."$searchresult"."%'"."
+                      AND a1.FullName LIKE " . "'%" . "$searchresult" . "%'" . "
                       GROUP BY m1.BookId
                       UNION ALL
                       SELECT a2.FullName, b2.BookId, b2.AuthorId, b2.Name, b2.Cover,
@@ -208,13 +209,91 @@ class Book
                       FROM Books b2, Authors a2
                       WHERE b2.BookId NOT IN
                       (SELECT BookId FROM Marks)
-                      AND a2.FullName LIKE "."'%"."$searchresult"."%'"."
+                      AND a2.AuthorId = b2.AuthorId
+                      AND a2.FullName LIKE " . "'%" . "$searchresult" . "%'" . "
                       GROUP BY b2.BookId";
         }
 
 
         return mysqli_query($db, $query)->fetch_all();
     }
+
+    public static function getBookReviews($bookId)
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT u.Login, r.Header, r.Review, r.Types
+                  FROM Reviews r, Users u
+                  WHERE r.BookId = $bookId
+                  AND r.UserId = u.UserId";
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
+
+    public static function getSimilarBooks($bookId)
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT b.BookId, b.Name, b.Cover, a.FullName, a.AuthorId
+                  FROM Books b, Authors a, SimilarBooks sb
+                  WHERE sb.FirstBook = $bookId
+                  AND sb.SecondBook = b.BookId
+                  AND b.AuthorId = a.AuthorId";
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
+
+    public static function addUserReview($header, $review, $rating, $bookId, $userId)
+    {
+        $db = Db::getConnection();
+
+        $query = "INSERT INTO Reviews(UserId, BookId, Header, Review, Types)
+                  VALUES ($userId, $bookId, '$header', '$review', '$rating')";
+
+        return mysqli_query($db, $query);
+    }
+
+    public static function getPopularBooks()
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT b.BookId, b.Name, b.Cover, Count(m.Mark)
+                  FROM Books b, Marks m, Authors a
+                  WHERE b.BookId = m.BookId
+                  AND b.AuthorId = a.AuthorId
+                  GROUP BY m.BookId
+				  ORDER BY Count(m.Mark) DESC
+				  LIMIT 0,6";
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
+
+    public static function existSimilarBook($firstId, $secondId)
+    {
+        $db = Db::getConnection();
+
+        $query = "SELECT * FROM SimilarBooks
+                  WHERE FirstBook = $firstId
+                  AND SecondBook = $secondId";
+
+        $result = mysqli_query($db, $query)->fetch_row();
+
+        if (isset($result)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function addSimilarBook($firstId, $secondId) {
+        $db = Db::getConnection();
+
+        $query = "INSERT INTO SimilarBooks (FirstBook, SecondBook) VALUES ('$firstId', '$secondId')";
+
+        $result = mysqli_query($db, $query);
+
+        return $result;
+    }
+
 
 }
 

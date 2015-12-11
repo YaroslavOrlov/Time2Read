@@ -1,6 +1,7 @@
 <?php include(ROOT . '/views/layouts/header.php'); ?>
 
 <link href="../../template/css/book.css" rel="stylesheet">
+<link href="../../template/css/salvattore.css" rel="stylesheet">
 
 <?php include(ROOT . '/views/layouts/navigation.php'); ?>
 
@@ -30,17 +31,17 @@
                                         <br/>
                                         <?php if (isset($marks[0][1])): ?>
                                             <?php foreach ($marks as $mark): ?>
-                                                <span>Средняя оценка</span>
+                                                <h4><span>Средняя оценка</span>
                                                 <span
                                                     id="avg-mark"><?php echo round(($mark[1] / $mark[0]), 2); ?></span>
-                                                <span>Оценили</span>
-                                                <span id="mark"><?php echo $mark[0]; ?></span>
+                                                    <span>Оценили</span>
+                                                    <span id="mark"><?php echo $mark[0]; ?></span></h4>
                                             <?php endforeach; ?>
                                         <?php else: ?>
-                                            <span>Средняя оценка</span>
-                                            <span>0</span>
-                                            <span>Оценили</span>
-                                            <span>0</span>
+                                            <h4><span>Средняя оценка</span>
+                                                <span>0</span>
+                                                <span>Оценили</span>
+                                                <span>0</span></h4>
                                         <?php endif; ?>
                                     </div>
                                     <div class="col-md-5 col-sm-6">
@@ -91,6 +92,12 @@
                                             remove-user-books
                                         <?php endif; ?>">По умолчанию
                                         </button>
+                                        <div class="marginformtop">
+                                            <form method="post" action="/book/similar">
+                                                <input type="hidden" name="idBook" value="<?php echo $data[1]; ?>">
+                                                <button class="btn btn-primary btn-block">Рекомендовать похожее</button>
+                                            </form>
+                                        </div>
                                         <!-- Выставление оценки -->
                                         <br/>
                                         <br/>
@@ -118,11 +125,105 @@
                             </div>
                             <!-- Рецензии -->
                             <div class="tab-pane fade" id="reviews">
+                                <form method="post" action="/book/AddReview">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-1 hidden-xs"></div>
+                                        <div class="col-md-6 col-sm-10 col-xs-12">
+                                            <div class="row">
+                                                <input name="bookId" value="<?php echo $data[1]; ?>" type="hidden"/>
+
+                                                <div class="col-md-8 col-sm-6 col-xs-6">
+                                                    <input name="header" type="text" class="littlemargin form-control"
+                                                           id="headercom"
+                                                           placeholder="Заголовок"/>
+                                                </div>
+                                                <div class="col-md-2 col-sm-3 col-xs-3 textalignright">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="rating" value="2"/>
+                                                        <i class="fa fa-thumbs-o-down fa-2x"></i>
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-2 col-sm-3 col-xs-3">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="rating" value="1" checked/>
+                                                        <i class="fa fa-thumbs-o-up fa-2x"></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <textarea class="form-control littlemargin" rows="12" id="comment"
+                                                      name="userreviews"
+                                                      placeholder="Напишите свои впечатления о книге"></textarea>
+
+                                            <p class="reviewnote">Количество введенных символов
+                                                должно быть от 500 до 1000</p>
+
+                                            <button name="submit" type="submit" class="btn btn-success btn-block">
+                                                Добавить
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3 col-sm-1 hidden-xs"></div>
+                                    </div>
+                                </form>
+                                <hr/>
+                                <div class="littlemargin">
+                                    <?php if (isset($bookreviews)): ?>
+                                        <?php foreach ($bookreviews as $review): ?>
+                                            <div class="row">
+                                                <div class="col-md-2 hidden-sm hidden-xs"></div>
+                                                <div class="col-md-8 col-sm-12 col-xs-12 backgorundclass">
+                                                    <div class="tinybookmargin">
+                                                        <h4><?php echo $review[0]; ?></h4>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-sm-8 col-xs-10 tinybookmargin">
+                                                            <h3><?php echo $review[1]; ?></h3>
+                                                        </div>
+                                                        <?php if ($review[3] == 1): ?>
+                                                            <div
+                                                                class="col-md-4 col-sm-4 col-xs-2 tinybookmargin textalignright">
+                                                                <i class="fa fa-thumbs-o-up fa-2x"></i>
+                                                            </div>
+                                                        <?php else: ?>
+                                                            <div
+                                                                class="col-md-4 col-sm-4 col-xs-2 tinybookmargin textalignright">
+                                                                <i class="fa fa-thumbs-o-down fa-2x"></i>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
+
+                                                    <p>
+                                                        <?php echo $review[2]; ?>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-2 hidden-sm hidden-xs"></div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                             <!-- Похожие -->
                             <div class="tab-pane fade" id="similar">
-                            </div>
+                                <div class="row masonry" data-columns>
+                                    <?php if (isset($similarbooks)): ?>
+                                        <?php foreach ($similarbooks as $similar): ?>
+                                            <div class="item">
+                                                <div class="thumbnail">
+                                                    <img alt="Обложка книги"
+                                                         src="../../template/images/books/<?php echo $similar[2]; ?>"
+                                                         class="img-responsive"/>
 
+                                                    <div class="caption">
+                                                        <h4><a href="/book/book/<?php echo $similar[0]; ?>">
+                                                                <?php echo $similar[1]; ?></a></h4>
+                                                        <h5><a href="/author/author/<?php echo $similar[4]; ?>">
+                                                                <?php echo $similar[3]; ?></a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -132,6 +233,8 @@
 </div>
 <script src="../../template/js/JCarousel/jquery.js"></script>
 <script src="../../template/js/addToUserBooks.js"></script>
+<script src="../../template/js/salvattore.min.js"></script>
+
 
 <?php include(ROOT . '/views/layouts/footer.php'); ?>
 

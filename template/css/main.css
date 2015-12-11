@@ -16,6 +16,12 @@ a, a:hover, a:focus, a:active{
     text-align: right;
 }
 
+p.error {
+	color: red;
+	font-size: 18px;
+}
+
+
 /* Убирает верхний отступ для заголовков */
 h1, h2, h3{
     margin-top: 0px;
@@ -41,7 +47,7 @@ text-align: center;
 body {
 	font-family: 'Segoe UI Light', Arial, sans-serif;
     color: white;
-    background: black;
+    background: transparent;
     background-image: url(../images/background.jpeg);
     background-attachment:fixed; 
     background-position:center;

@@ -120,7 +120,7 @@
                         <?php endif; ?>">По умолчанию
                         </button>
                         <button class="btn btn-primary btn-block"
-                                data-book-i=<?php echo $book[1]; ?>>Похожее
+                                data-book-i="<?php echo $book[1]; ?>">Похожее
                         </button>
                     </div>
                     <div class="col-md-1 hidden-sm hidden-xs"></div>

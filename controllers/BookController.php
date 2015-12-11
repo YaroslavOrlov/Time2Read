@@ -173,11 +173,11 @@ class BookController
                 $bookId = $_POST['bookId'];
 
 
-                if(!preg_match('/[A-Za-z0-9_-]{500,1000}/', $review)){
+                if (!preg_match('/[A-Za-z0-9_-]{500,1000}/', $review)) {
                     $errors[0] = 'Количество введенных символов должно быть от 500 до 1000';
                 }
 
-                if($errors == false){
+                if ($errors == false) {
 
                     Book::addUserReview($header, $review, $rating, $bookId, $user_id);
 
@@ -197,7 +197,8 @@ class BookController
 
     }
 
-    public function isSelf($secondId) {
+    public function isSelf($secondId)
+    {
         if ($_SESSION["similarbookid"] == $secondId) {
             return true;
         }
@@ -212,7 +213,7 @@ class BookController
         $tagresult = '%';
         $genre = '%';
         $bookorauthor = '%';
-        $user_id = User::returnUser();
+        $user_id = User::validLogged();
 
         if (isset($_POST['submit'])) {
             $searchresult = $_POST['searchresult'];

@@ -9,7 +9,7 @@ return array(
     'author/author/([1-9]+)' => 'author/author/$1',
     'book/book/([1-9]+)' => 'book/book/$1',
     'book/book' => 'book/book/1',
-    'book/addSimilar/([1-9]+)' => 'book/AddSimilar/$1',
+    'book/AddSimilar/([1-9]+)' => 'book/AddSimilar/$1',
     'book/similar' => 'book/similar',
     'book/search' => 'book/search',
     'book/AlreadyRead/([1-9]+)' => 'book/AlreadyRead/$1',

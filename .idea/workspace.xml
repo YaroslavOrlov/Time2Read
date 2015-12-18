@@ -21,30 +21,7 @@
     <favorites_list name="time2read" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="BookController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controllers/BookController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7878788">
-              <caret line="168" column="96" selection-start-line="168" selection-start-column="96" selection-end-line="168" selection-end-column="96" />
-              <folding>
-                <element signature="n#actionAddReview#0;n#BookController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_params.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/db_params.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.352941">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -88,7 +65,6 @@
         <option value="$PROJECT_DIR$/views/layouts/header.php" />
         <option value="$PROJECT_DIR$/template/css/main.css" />
         <option value="$PROJECT_DIR$/template/css/home.css" />
-        <option value="$PROJECT_DIR$/views/home/home.php" />
         <option value="$PROJECT_DIR$/views/layouts/navigation.php" />
         <option value="$PROJECT_DIR$/template/css/navigation.css" />
         <option value="$PROJECT_DIR$/models/Author.php" />
@@ -108,6 +84,7 @@
         <option value="$PROJECT_DIR$/models/Book.php" />
         <option value="$PROJECT_DIR$/config/db_params.php" />
         <option value="$PROJECT_DIR$/controllers/BookController.php" />
+        <option value="$PROJECT_DIR$/views/home/home.php" />
       </list>
     </option>
   </component>
@@ -168,7 +145,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,7 +173,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,12 +187,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,9 +280,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -466,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home/popular.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -558,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.117647">
-          <caret line="209" column="61" selection-start-line="209" selection-start-column="61" selection-end-line="209" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/user/registration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.057109557">
@@ -593,63 +560,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/time2read/time2read/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9411764">
-          <caret line="4" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="315" selection-end-column="2" />
-          <folding>
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="UPDATE Users..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Users..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Users..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT b.Nam..Reviews..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT b.Nam..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT b.Nam..Books..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT uq.Qu..Quotes..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT b.Boo..Books..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Reviews..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..UserBooks..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..UserQuotes..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Marks..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT a.Nam..Achieves..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..UnlockedAchieves..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT Login..Users..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT l.Nam..Levels..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="SELECT Level..Levels..." />
-            <marker date="1450398052630" expanded="true" signature="-1:-1" placeholder="UPDATE Users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.94172496">
           <caret line="315" column="2" selection-start-line="315" selection-start-column="2" selection-end-line="315" selection-end-column="2" />
-          <folding>
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="UPDATE Users..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Users..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Users..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT b.Nam..Reviews..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT b.Nam..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT b.Nam..Books..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT uq.Qu..Quotes..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT b.Boo..Books..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Reviews..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..UserBooks..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..UserQuotes..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Marks..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT a.Nam..Achieves..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..UnlockedAchieves..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT Login..Users..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT l.Nam..Levels..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="SELECT Level..Levels..." />
-            <marker date="1450400116815" expanded="true" signature="-1:-1" placeholder="UPDATE Users..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -657,23 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.94172496">
           <caret line="189" column="2" selection-start-line="189" selection-start-column="2" selection-end-line="189" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/time2read/time2read/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="189" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/time2read/time2read/controllers/BookController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4079254">
-          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="281" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,15 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.94172496">
           <caret line="74" column="2" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/time2read/time2read/controllers/QuoteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14568764">
-          <caret line="5" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,7 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,7 +593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43706295">
           <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8251748">
           <caret line="207" column="5" selection-start-line="156" selection-start-column="4" selection-end-line="207" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,14 +607,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.882353">
           <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
-          <folding>
-            <marker date="1449819223560" expanded="true" signature="-1:-1" placeholder="SELECT b1.Bo..Books..." />
-            <marker date="1449819223560" expanded="true" signature="-1:-1" placeholder="SELECT b1.Bo..." />
-            <marker date="1449819223560" expanded="true" signature="-1:-1" placeholder="SELECT b2.Bo..Books..." />
-            <marker date="1449819223560" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
-            <marker date="1449819223560" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Authors..." />
-            <marker date="1449819223560" expanded="true" signature="-1:-1" placeholder="SELECT a.Aut..Books..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -758,34 +637,6 @@
             <element signature="n#getPopularBooks#0;n#Book#0;n#!!top" expanded="false" />
             <element signature="n#existSimilarBook#0;n#Book#0;n#!!top" expanded="false" />
             <element signature="n#addSimilarBook#0;n#Book#0;n#!!top" expanded="false" />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a.Ful..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Marks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..UserBooks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="UPDATE UserB..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Marks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..UserBooks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Marks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="UPDATE Marks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a2.Fu..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a1.Fu..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT a2.Fu..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT BookI..Marks..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT u.Log..Reviews..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT b.Boo..Books..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Reviews..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="UPDATE Revie..." />
-            <marker date="1450401000933" expanded="true" signature="-1:-1" placeholder="SELECT b.Boo..Books..." />
           </folding>
         </state>
       </provider>
@@ -794,25 +645,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.93939394">
           <caret line="203" column="33" selection-start-line="203" selection-start-column="33" selection-end-line="203" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/BookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43706295">
+          <caret line="168" column="12" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+          <folding>
+            <element signature="n#actionAddReview#0;n#BookController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.852942">
+          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/db_params.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.352941">
+        <state vertical-scroll-proportion="0.29137528">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/BookController.php">
+    <entry file="file://$PROJECT_DIR$/controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7878788">
-          <caret line="168" column="96" selection-start-line="168" selection-start-column="96" selection-end-line="168" selection-end-column="96" />
-          <folding>
-            <element signature="n#actionAddReview#0;n#BookController#0;n#!!top" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.6118881">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

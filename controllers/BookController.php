@@ -157,7 +157,7 @@ class BookController
         $tagresult = '%';
         $genre = '%';
         $bookorauthor = '%';
-//        $user_id = User::validLogged();
+        $user_id = User::validLogged();
 
         if (isset($_POST['submit'])) {
             $searchresult = $_POST['searchresult'];
@@ -166,9 +166,9 @@ class BookController
             $bookorauthor = $_POST['bookorauthor'];
 
 
-            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, 13);
+            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, $user_id);
         } else {
-            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, 13);
+            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, $user_id);
         }
 
         require_once(ROOT . '/views/book/search.php');

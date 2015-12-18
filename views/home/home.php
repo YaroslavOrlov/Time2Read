@@ -75,7 +75,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="../../template/images./books.png" class="img-responsive"/>
+                                    <img src="../../template/images/books.png" class="img-responsive"/>
                                 </div>
                                 <div class="col-md-6">
                                     <p>Ставьте книгам оценки, смотрите общий рейтинг книги, на сколь оценивают эту книгу

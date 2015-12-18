@@ -5,7 +5,7 @@
 <?php include(ROOT . '/views/layouts/navigation.php'); ?>
 
 
-    <div class="container">
+    <div class="container marginfromnavigation">
         <div class="row">
             <div class="col-md-3">
             </div>

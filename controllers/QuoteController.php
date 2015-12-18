@@ -42,6 +42,10 @@ class QuoteController
                 Quote::addQuote($quote_id,$user_id);
             }
 
+            if (User::countUserQuotes($user_id) == 5 && !(User::existUserAchieve($user_id, 4))) {
+                User::addUserAchieve($user_id, 4);
+            }
+
             return true;
         }
 

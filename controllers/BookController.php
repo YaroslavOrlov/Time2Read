@@ -35,6 +35,13 @@ class BookController
                 Book::addToAlreadyRead($userId, $bookId);
             }
 
+            if (User::countUserBooks($userId, 1) == 5 && !(User::existUserAchieve($userId, 6))) {
+                User::addUserAchieve($userId, 6);
+            }
+            else if (User::countUserBooks($userId, 1) == 20 && !(User::existUserAchieve($userId, 7))) {
+                User::addUserAchieve($userId, 7);
+            }
+
             return true;
 
         }
@@ -56,6 +63,10 @@ class BookController
                 Book::addToReading($userId, $bookId);
             }
 
+            if (User::countUserBooks($userId, 2) > 0 && !(User::existUserAchieve($userId, 8))) {
+                User::addUserAchieve($userId, 8);
+            }
+
             return true;
         }
 
@@ -74,6 +85,10 @@ class BookController
                 Book::updateUserBook($userId, $bookId, 3);
             } else {
                 Book::addToWantRead($userId, $bookId);
+            }
+
+            if (User::countUserBooks($userId, 3) == 5 && !(User::existUserAchieve($userId, 10))) {
+                User::addUserAchieve($userId, 10);
             }
 
             return true;
@@ -111,6 +126,13 @@ class BookController
                 Book::addMarkToBook($bookId, $userId, $mark);
             }
 
+            if (User::countUserRate($userId) == 5 && !(User::existUserAchieve($userId, 3))) {
+                User::addUserAchieve($userId, 3);
+            }
+            else if (User::countUserRate($userId) == 20 && !(User::existUserAchieve($userId, 5))) {
+                User::addUserAchieve($userId, 5);
+            }
+
             $result = json_encode(Book::getMarksBookById($bookId),
                 JSON_HEX_TAG |
                 JSON_HEX_APOS |
@@ -135,7 +157,7 @@ class BookController
         $tagresult = '%';
         $genre = '%';
         $bookorauthor = '%';
-        $user_id = User::validLogged();
+//        $user_id = User::validLogged();
 
         if (isset($_POST['submit'])) {
             $searchresult = $_POST['searchresult'];
@@ -144,9 +166,9 @@ class BookController
             $bookorauthor = $_POST['bookorauthor'];
 
 
-            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, $user_id);
+            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, 13);
         } else {
-            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, $user_id);
+            $books = Book::getSearchBooks($searchresult, $tagresult, $genre, $bookorauthor, 13);
         }
 
         require_once(ROOT . '/views/book/search.php');
@@ -157,35 +179,41 @@ class BookController
     public function actionAddReview()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $header = '';
+
             $review = '';
+            $header = '';
             $rating = '';
             $bookId = '';
-
-            $errors = false;
 
             $user_id = User::validLogged();
 
             if (isset($_POST['submit'])) {
                 $header = $_POST['header'];
-                $review = $_POST['userreviews'];
+                $review = $_POST['user_reviews'];
                 $rating = $_POST['rating'];
                 $bookId = $_POST['bookId'];
+                unset($_SESSION['error']);
 
 
-                if (!preg_match('/[A-Za-z0-9_-]{500,1000}/', $review)) {
-                    $errors[0] = 'Количество введенных символов должно быть от 500 до 1000';
+                if (iconv_strlen($review, 'UTF-8') < 500 or iconv_strlen($review, 'UTF-8') > 1000) {
+                    $_SESSION['error'] = 'РљРѕР»РёС‡РµСЃС‚РІРѕ РІРІРµРґРµРЅРЅС‹С… СЃРёРјРІРѕР»РѕРІ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РѕС‚ 500 РґРѕ 1000';
                 }
 
-                if ($errors == false) {
+                if (!isset($_SESSION['error'])) {
 
-                    Book::addUserReview($header, $review, $rating, $bookId, $user_id);
+                    if (Book::existReview($user_id, $bookId)) {
+                        Book::updateReview($header, $review, $rating, $bookId, $user_id);
+                    } else {
+                        Book::addUserReview($header, $review, $rating, $bookId, $user_id);
+                    }
 
                     header("Location: /book/book/" . $bookId);
                 }
 
             }
+
             header("Location: /book/book/" . $bookId);
+
 
             return true;
 

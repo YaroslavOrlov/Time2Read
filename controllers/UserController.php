@@ -77,6 +77,10 @@ class UserController
                 } else {
                     User::auth($userId);
 
+                    if (!User::existUserAchieve($userId ,9)) {
+                        User::addUserAchieve($userId, 9);
+                    }
+
                     header("Location: /home/home/");
                 }
             }
@@ -96,7 +100,11 @@ class UserController
 
         $countReview = User::countReviews($user_id);
 
-        $countRead = User::getAlreadyRead($user_id);
+        $countRead = User::countUserBooks($user_id, 1);
+
+        $countReading = User::countUserBooks($user_id, 2);
+
+        $countWantRead = User::countUserBooks($user_id, 3);
 
         $alreadyread = User::getUserLikeBook($user_id, 1);
 
@@ -106,7 +114,12 @@ class UserController
 
         $login = User::getUserLogin($user_id);
 
-        //var_dump($reviews);
+        $level = User::getUserLevel($user_id);
+
+        $achieves = User::getUserAchieves($user_id);
+
+        $recommends = User::getUserRecommends($user_id);
+
 
         require_once(ROOT . '/views/user/profile.php');
 

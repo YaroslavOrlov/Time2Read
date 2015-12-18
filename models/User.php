@@ -118,14 +118,16 @@ class User
     {
         $db = DB::getConnection();
 
-        $query = "SELECT b.Name, r.Review, m.Mark
+        $query = "SELECT b.Name, r.Review, m.Mark,
+                  b.BookId, r.Header, r.Types
                   FROM Reviews r, Books b, Marks m
                   WHERE b.BookId = m.BookId
                   AND r.BookId = b.BookId
                   AND r.UserId = $userId
                   GROUP BY m.BookId
                   UNION
-                  SELECT b.Name, '', m.Mark
+                  SELECT b.Name, '', m.Mark,
+                  b.BookId, '', ''
                   FROM Books b, Marks m
                   WHERE b.BookId = m.BookId
                   AND m.UserId = $userId";
@@ -170,19 +172,102 @@ class User
                   FROM Reviews
                   WHERE UserId = $userId";
 
-        return mysqli_query($db, $query)->fetch_array();
+        $result = mysqli_query($db, $query)->fetch_array();
+        return $result[0];
     }
 
-    public static function getAlreadyRead($userId)
+    public static function countUserBooks($userId, $category)
     {
         $db = DB::getConnection();
 
         $query = "SELECT COUNT(UserId)
                   FROM UserBooks
                   WHERE UserId = $userId
-                  AND Category = 1";
+                  AND Category = $category";
 
-        return mysqli_query($db, $query)->fetch_array();
+        $result = mysqli_query($db, $query)->fetch_array();
+        return $result[0];
+    }
+
+    public static function countUserQuotes($userId) {
+        $db = DB::getConnection();
+
+        $query = "SELECT COUNT(QuoteId)
+                  FROM UserQuotes
+                  WHERE UserId = $userId";
+
+        $result = mysqli_query($db, $query)->fetch_array();
+        return $result[0];
+    }
+
+    public static function countUserRate($userId) {
+        $db = DB::getConnection();
+
+        $query = "SELECT COUNT(UserId)
+                  FROM Marks
+                  WHERE UserId = $userId";
+
+        $result = mysqli_query($db, $query)->fetch_array();
+        return $result[0];
+    }
+
+    public static function getUserAchieves($userId)
+    {
+        $db = DB::getConnection();
+
+        $query = "SELECT a.Name, a.Description, a.Cover
+                  FROM Achieves a, UnlockedAchieves ua
+                  WHERE ua.UserId = $userId
+                  AND a.AchieveId = ua.AchievesId";
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
+
+    public static function existUserAchieve($userId, $achieveId) {
+        $db = Db::getConnection();
+
+        $query = "SELECT COUNT(UserId)
+                  FROM UnlockedAchieves
+                  WHERE UserId = $userId
+                  AND AchievesId = $achieveId";
+        $result = mysqli_query($db, $query)->fetch_array();
+        return  $result[0];
+    }
+
+    public static function addUserAchieve($userId, $achieveId) {
+        $db = Db::getConnection();
+
+        $query = "INSERT INTO UnlockedAchieves(UserId, AchievesId)
+                  VALUES ($userId, $achieveId)";
+
+        $result = mysqli_query($db, $query);
+
+        User::updateUserLevel($userId);
+
+        return $result;
+    }
+
+    public static function getUserRate($userId, $mark) {
+        $db = DB::getConnection();
+
+        $query = "SELECT BookId
+                  FROM Marks
+                  WHERE UserId = $userId
+                  AND Mark = $mark";
+
+        return mysqli_query($db, $query)->fetch_all();
+    }
+
+    public static function getUserRecommends($userId) {
+        $topRated = User::getUserRate($userId, 5);
+        $recommends = array();
+        foreach($topRated as $bookId) {
+            $similar = Book::getSimilarBooks($bookId[0]);
+            foreach ($similar as $book) {
+                array_push($recommends, $book);
+            }
+        }
+        return $recommends;
     }
 
     public static function getUserLogin($userId)
@@ -194,6 +279,36 @@ class User
                   WHERE UserId = $userId";
 
         return mysqli_query($db, $query)->fetch_array();
+    }
+
+    public static function getUserLevel($userId) {
+        $db = DB::getConnection();
+
+        $query = "SELECT l.Name
+                  FROM Levels l, Users us
+                  WHERE us.UserId = $userId
+                  AND us.LevelId = l.LevelId";
+
+        return mysqli_query($db, $query)->fetch_array();
+    }
+
+    public static function updateUserLevel($userId) {
+        $db = DB::getConnection();
+
+        $countAchieves = count(User::getUserAchieves($userId));
+
+        $query = "SELECT LevelId
+                  FROM Levels
+                  WHERE AchievesQuantity = $countAchieves";
+
+        $levelId = mysqli_query($db, $query)->fetch_array();
+
+        if (isset($levelId)) {
+            $query = "UPDATE Users SET LevelId = $levelId[0]
+                      WHERE UserId = $userId";
+
+            return mysqli_query($db, $query);
+        }
     }
 
 }

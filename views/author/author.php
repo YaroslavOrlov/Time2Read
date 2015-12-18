@@ -42,9 +42,9 @@
                                 </td>
                                 <td>
                                     <?php if ($book[2] != 0): ?>
-                                        <span>Оценка</span><span><?php echo round(($book[3] / $book[2]), 2); ?></span>
+                                        <span>Оценка </span><span><?php echo round(($book[3] / $book[2]), 2); ?></span>
                                     <?php else: ?>
-                                        <span>Оценка</span><span><?php echo 0; ?></span>
+                                        <span>Оценка </span><span><?php echo 0; ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td>

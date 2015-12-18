@@ -253,6 +253,26 @@ class Book
         return mysqli_query($db, $query);
     }
 
+    public static function existReview($userId, $bookId)
+    {
+        $db = Db::getConnection();
+        $query = "SELECT * FROM Reviews WHERE UserId = '$userId' AND BookId = '$bookId'";
+        $result = mysqli_query($db, $query);
+        return ($result->fetch_row() ? true : false);
+    }
+
+    public static function updateReview($header, $review, $rating, $bookId, $userId)
+    {
+        $db = Db::getConnection();
+
+        $query = "UPDATE Reviews SET Header='$header', Review='$review', Types='$rating'
+                  WHERE UserId = $userId
+                  AND BookId = $bookId";
+
+        return mysqli_query($db, $query);
+    }
+
+
     public static function getPopularBooks()
     {
         $db = Db::getConnection();
@@ -284,7 +304,8 @@ class Book
         return false;
     }
 
-    public static function addSimilarBook($firstId, $secondId) {
+    public static function addSimilarBook($firstId, $secondId)
+    {
         $db = Db::getConnection();
 
         $query = "INSERT INTO SimilarBooks (FirstBook, SecondBook) VALUES ('$firstId', '$secondId')";

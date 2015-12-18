@@ -10,7 +10,8 @@
         <!-- Меню для больших экранов -->
         <div class="container hidden-sm hidden-xs visible-md visible-lg">
             <div class="row">
-                <div class="col-md-2 col-lg-2"><img alt="Ваш аватар" src="../../template/images/<?php echo $login[2]; ?>"
+                <div class="col-md-2 col-lg-2"><img alt="Ваш аватар"
+                                                    src="../../template/images/<?php echo $login[2]; ?>"
                                                     class="avatar"/>
                 </div>
                 <div class="col-md-10 col-lg-10 margininfotop">
@@ -24,7 +25,12 @@
                                     <?php if (isset($countRead)): ?>
                                         <?php echo $countRead[0]; ?>
                                     <? endif; ?>
-                                    |</span> <span>Уровень Джедай |</span>
+                                    |</span>
+                                <span>Уровень
+                                    <?php if (isset($level)): ?>
+                                        <?php echo $level[0]; ?>
+                                    <? endif; ?>
+                                    |</span>
                                 <span> Написал рецензий
                                     <?php if (isset($countReview)): ?>
                                         <?php echo $countReview[0]; ?>
@@ -77,7 +83,7 @@
                             </h4>
                         </div>
                         <div class="col-sm-12 paddingbutton textalignright">
-                            <a href="/user/edit"  class="btn btn-success buttonmargin">Редактировать</a>
+                            <a href="/user/edit" class="btn btn-success buttonmargin">Редактировать</a>
                             <a href="/user/logout"
                                class="btn btn-success buttonmargin buttonwidth buttonheigth">Выйти</a>
                         </div>
@@ -109,7 +115,7 @@
                         <? endif; ?>
                     </h4></div>
                 <div class="col-xs-12">
-                    <a href="/user/edit"  class="btn btn-success buttonmargin">Редактировать</a>
+                    <a href="/user/edit" class="btn btn-success buttonmargin">Редактировать</a>
                     <a href="/user/logout" class="btn btn-success buttonmargin buttonwidth buttonheigth">Выйти</a>
                 </div>
             </div>
@@ -169,9 +175,15 @@
                                             <p><?php echo $row[1]; ?></p>
 
                                             <div class="col-md-12 textalignright">
-                                                <a href="#">
+                                                <form method="post" action="/book/book/<?php echo $row[3]; ?>">
+                                                    <input type="hidden" name="editReview"
+                                                           value="<?php echo $row[1]; ?>">
+                                                    <input type="hidden" name="editHeader"
+                                                           value="<?php echo $row[4]; ?>">
+                                                    <input type="hidden" name="editTypes"
+                                                           value="<?php echo $row[5]; ?>">
                                                     <button class="btn btn-success">Редактировать</button>
-                                                </a>
+                                                </form>
                                             </div>
                                         <?php endif; ?>
                                     </div>
@@ -205,20 +217,45 @@
                 <!-- Реккомендованые для пользователя -->
                 <div class="tab-pane fade" id="user_reccomendation">
                     <div class="row masonry" data-columns>
-                        <div class="item">
-                            <div class="thumbnail">
-                                <img alt="Обложка книги" src="http://placehold.it/320x450" class="img-responsive"/>
+                        <?php if (isset($recommends)): ?>
+                            <?php foreach ($recommends as $book): ?>
+                                <div class="item">
+                                    <div class="thumbnail">
+                                        <img alt="Обложка книги"
+                                             src="../../template/images/books/<?php echo $book[2]; ?>"
+                                             class="img-responsive"/>
 
-                                <div class="caption">
-                                    <h4><a href="#">Название книги</a></h4>
-                                    <h5><a href="#">Автор книги</a></h5>
+                                        <div class="caption">
+                                            <h4><a href="/book/book/<?php echo $book[0]; ?>"><?php echo $book[1]; ?></a></h4>
+                                            <h5><a href="/author/author/<?php echo $book[4]; ?>"><?php echo $book[3]; ?></a></h5>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <!-- Достижения -->
-                <div class="tab-pane fade" id="user_achivments"></div>
+                <div class="tab-pane fade" id="user_achivments">
+                    <div class="row centertext">
+                        <?php if (isset($achieves)): ?>
+                            <?php foreach ($achieves as $achieve): ?>
+                                <div class="col-md-6 col-sm-6 col-xs-12 achivments ">
+                                    <div class="row ">
+                                        <div class="col-md-4 col-sm-3 col-xs-12 ">
+                                            <p><img src="../../template/images/achieves/<?php echo $achieve[2]; ?>"/>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-8 col-sm-9 col-xs-12">
+                                            <h2><?php echo $achieve[0]; ?></h2>
+                                            <h4><?php echo $achieve[1]; ?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
                 <!-- Читает -->
                 <div class="tab-pane fade" id="user_read">
                     <div class="row masonry" data-columns>

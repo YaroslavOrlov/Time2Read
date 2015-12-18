@@ -15,15 +15,19 @@
                     <!-- Вкладки -->
                     <div class="tabs" data-id="<?php echo $data[1]; ?>">
                         <ul class="nav nav-pills nav-justified">
-                            <li class="active"><a href="#main" data-toggle="tab">Основное</a></li>
-                            <li><a href="#reviews" data-toggle="tab">Рецензии</a></li>
+                            <li class="<?php if (!isset($_POST['editReview']) and !isset($_SESSION['error'])): ?> active <?php endif; ?>">
+                                <a href="#main" data-toggle="tab">Основное</a></li>
+                            <li class="<?php if (isset($_POST['editReview']) or isset($_SESSION['error'])): ?> active <?php endif; ?>">
+                                <a href="#reviews" data-toggle="tab">Рецензии</a></li>
                             <li><a href="#similar" data-toggle="tab">Похожие</a></li>
                         </ul>
                         <br/>
                         <!-- Контент -->
                         <div class="tab-content">
                             <!-- Основное -->
-                            <div class="tab-pane fade in active" id="main">
+                            <div class="tab-pane fade
+                            <?php if (!isset($_POST['editReview']) and !isset($_SESSION['error'])): ?> in active <?php endif; ?>"
+                                 id="main">
                                 <div class="row">
                                     <div class="col-md-4 col-sm-6 littlemargin">
                                         <img src="../../template/images/books/<?php echo $data[7]; ?>"
@@ -124,7 +128,9 @@
                                 </div>
                             </div>
                             <!-- Рецензии -->
-                            <div class="tab-pane fade" id="reviews">
+                            <div class="tab-pane fade
+                             <?php if (isset($_POST['editReview']) or isset($_SESSION['error'])): ?> in active <?php endif; ?>"
+                                 id="reviews">
                                 <form method="post" action="/book/AddReview">
                                     <div class="row">
                                         <div class="col-md-3 col-sm-1 hidden-xs"></div>
@@ -133,29 +139,61 @@
                                                 <input name="bookId" value="<?php echo $data[1]; ?>" type="hidden"/>
 
                                                 <div class="col-md-8 col-sm-6 col-xs-6">
-                                                    <input name="header" type="text" class="littlemargin form-control"
-                                                           id="headercom"
-                                                           placeholder="Заголовок"/>
+                                                    <?php if (isset($_POST['editHeader'])): ?>
+                                                        <input name="header" type="text"
+                                                               class="littlemargin form-control"
+                                                               id="headercom"
+                                                               value="<?php echo $_POST['editHeader']; ?>"
+                                                               placeholder="Заголовок"/>
+                                                    <?php else: ?>
+                                                        <input name="header" type="text"
+                                                               class="littlemargin form-control"
+                                                               id="headercom"
+                                                               placeholder="Заголовок"/>
+                                                    <?php endif; ?>
                                                 </div>
-                                                <div class="col-md-2 col-sm-3 col-xs-3 textalignright">
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="rating" value="2"/>
-                                                        <i class="fa fa-thumbs-o-down fa-2x"></i>
-                                                    </label>
-                                                </div>
-                                                <div class="col-md-2 col-sm-3 col-xs-3">
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="rating" value="1" checked/>
-                                                        <i class="fa fa-thumbs-o-up fa-2x"></i>
-                                                    </label>
-                                                </div>
+                                                <?php if (isset($_POST['editTypes']) and $_POST['editTypes'] == 1): ?>
+                                                    <div class="col-md-2 col-sm-3 col-xs-3 textalignright">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="rating" value="2"/>
+                                                            <i class="fa fa-thumbs-o-down fa-2x"></i>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-3 col-xs-3">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="rating" value="1" checked/>
+                                                            <i class="fa fa-thumbs-o-up fa-2x"></i>
+                                                        </label>
+                                                    </div>
+                                                <?php else: ?>
+                                                    <div class="col-md-2 col-sm-3 col-xs-3 textalignright">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="rating" value="2" checked/>
+                                                            <i class="fa fa-thumbs-o-down fa-2x"></i>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-3 col-xs-3">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="rating" value="1"/>
+                                                            <i class="fa fa-thumbs-o-up fa-2x"></i>
+                                                        </label>
+                                                    </div>
+                                                <?php endif; ?>
                                             </div>
-                                            <textarea class="form-control littlemargin" rows="12" id="comment"
-                                                      name="userreviews"
-                                                      placeholder="Напишите свои впечатления о книге"></textarea>
+                                            <?php if (isset($_POST['editReview'])): ?>
+                                                <textarea class="form-control littlemargin" rows="12" id="comment"
+                                                          name="user_reviews"
+                                                          placeholder="Напишите свои впечатления о книге"><?php echo $_POST['editReview']; ?></textarea>
+                                            <?php else: ?>
+                                                <textarea class="form-control littlemargin" rows="12" id="comment"
+                                                          name="user_reviews"
+                                                          placeholder="Напишите свои впечатления о книге"></textarea>
+                                            <?php endif; ?>
 
-                                            <p class="reviewnote">Количество введенных символов
-                                                должно быть от 500 до 1000</p>
+                                            <?php if (isset($_SESSION['error'])): ?>
+                                                <p class="error">Количество введенных символов
+                                                    должно быть от 500 до 1000</p>
+                                            <?php endif; ?>
 
                                             <button name="submit" type="submit" class="btn btn-success btn-block">
                                                 Добавить
